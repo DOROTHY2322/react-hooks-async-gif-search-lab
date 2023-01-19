@@ -9,7 +9,7 @@ function GifListContainer() {
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
-        `https://api.giphy.com/v1/gifs/search?api_key=&q=cheeseburgers&limit=25&offset=5&rating=g&lang=en`
+        `https://api.giphy.com/v1/gifs/search?q=YOUR QUERY HERE&api_key=dc6zaTOxFJmzC&rating=g`
       );
       const data = await response.json();
       setGifs(data.data.slice(0, 3));
@@ -17,10 +17,11 @@ function GifListContainer() {
     fetchData();
   }, [searchQuery]);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event, searchQuery) => {
     event.preventDefault();
-    setSearchQuery(event.target.search.value);
+    setSearchQuery(searchQuery);
   };
+  
 
   return (
     <div>
