@@ -9,7 +9,7 @@ function GifListContainer() {
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
-        `https://api.giphy.com/v1/gifs/search?q=YOUR QUERY HERE&api_key=dc6zaTOxFJmzC&rating=g`
+        `https://api.giphy.com/v1/gifs/search?api_key=3IyDsv9ZOPDmMe1Y3PEiHiKVPOBiUmMt&q=cheeseburgers&limit=25&offset=0&rating=g&lang=en`
       );
       const data = await response.json();
       setGifs(data.data.slice(0, 3));
